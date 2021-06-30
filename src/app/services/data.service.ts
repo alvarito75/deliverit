@@ -20,9 +20,9 @@ export class DataService {
 
   // Order list
   private orders: Order[] = [
-    new Order('1', 'Pedido Calatayud', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
-    new Order('2', 'Pedido La Pampa', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
-    new Order('3', 'Pedido Cala Cala', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
+    new Order('1', 'Tienda Calatayud', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
+    new Order('2', 'Tienda La Pampa', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
+    new Order('3', 'Tienda Cala Cala', 'https://pilandina.com.bo/wp-content/uploads/2019/06/Leche-Light-sachet-800-ml-600x600.jpg', this.products),
   ];
 
   constructor() { }
