@@ -1,0 +1,32 @@
+
+<ion-item *ngFor="let order of orders">
+  
+  <ion-grid>
+    <ion-row (click)="showInfoOrder(order.idOrder)">
+      <ion-col>
+        <div>
+          <ion-avatar>
+            <img src="{{order.imageUrl}}">
+          </ion-avatar>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div>
+          <ion-label>Name: {{order.orderName}}</ion-label>
+        </div>
+      </ion-col>
+      <!--<ion-col>
+        <div>
+          <ion-label>ID: {{person.id}}</ion-label>
+          <ion-label>Name: {{person.name}}</ion-label>
+          <ion-label>Last Name: {{person.lastName}}</ion-label>
+          <ion-label *ngFor="let cell of person.cellphone">
+            <span>{{cell}}</span>
+          </ion-label>
+        </div>
+      </ion-col>-->
+    </ion-row>
+  </ion-grid>
+  
+</ion-item>

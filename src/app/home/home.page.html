@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Welcome to DeliverIt
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="auth-form">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/registration']" expand="block" color="primary">
+          Registrar
+        </ion-button>
+
+        <ion-item-divider>
+          <ion-label>
+            <span class="already">¿Ya es un usuario?</span>
+          </ion-label>
+        </ion-item-divider>
+
+        <ion-button [routerLink]="['/login']" expand="block" color="danger">
+          Iniciar sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
