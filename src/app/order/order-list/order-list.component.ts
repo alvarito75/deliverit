@@ -19,9 +19,9 @@ export class OrderListComponent implements OnInit {
     this.orders = this.dataService.getOrdersData();
   }
 
-  showInfo(idPeople) {
-    console.log(idPeople);
-    this.router.navigate(['/product/' + idPeople]);
+  showOrderInfo(idOrder) {
+    console.log(idOrder);
+    this.router.navigate(['/order/' + idOrder]);
   }
 
 }
