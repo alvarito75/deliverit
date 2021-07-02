@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Tienda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='formOrder'>
+
+    <ion-item lines="full">
+      <ion-label position="floating">ID  tienda</ion-label>
+      <ion-input type="number" required formControlName='idOrder'></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre tienda</ion-label>
+      <ion-input type="text" required formControlName='orderName'></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">URL de imagen</ion-label>
+      <ion-input type="text" required formControlName='imageUrl'></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)='addOrder()'>Crear Tienda</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+</ion-content>

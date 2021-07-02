@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido a DeliverIt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card [routerLink]="['/order']" class="card-start">
+    <ion-card-header>
+      <img src='../../assets/deliverit/store.png' >
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" color="primary">
+        Ver lista de tiendas
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card  [routerLink]="['/product']" class="card-start">
+    <ion-card-header>
+      <img src='../../assets/deliverit/products.png' >
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" color="primary">
+        Ver lista de productos
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

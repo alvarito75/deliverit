@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>new-product</ion-title>
+    <ion-title>Nuevo producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="product"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form >
 
+    <ion-item lines="full">
+      <ion-label position="floating">ID  Producto</ion-label>
+      <ion-input type="number" required ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre producto</ion-label>
+      <ion-input type="text" required ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="number" required ></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)='registerProduct()'>Crear Producto</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
 </ion-content>

@@ -45,6 +45,18 @@ const routes: Routes = [
       }
     ],
   },
+  {
+    path: 'create-order',
+    loadChildren: () => import('./order/new-order/new-order.module').then( m => m.NewOrderPageModule)
+  },
+  {
+    path: 'create-product',
+    loadChildren: () => import('./product/new-product/new-product.module').then( m => m.NewProductPageModule)
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
+  },
 ];
 
 @NgModule({

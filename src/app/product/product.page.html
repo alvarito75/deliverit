@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de products</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="start"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de productos</ion-title>
     <ion-buttons slot='primary'>
-      <ion-button (click)='cerrar()'>
-        <ion-icon name="person-add-outline"></ion-icon>
+      <ion-button (click)='crearProduct()'>
+        <ion-icon name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

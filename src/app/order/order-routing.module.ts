@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'single-order-page',
     loadChildren: () => import('./single-order-page/single-order-page.module').then( m => m.SingleOrderPagePageModule)
+  },
+  {
+    path: 'new-order',
+    loadChildren: () => import('./new-order/new-order.module').then( m => m.NewOrderPageModule)
   }
 ];
 

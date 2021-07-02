@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
+import { DataService } from '../services/data.service'
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.page.html',
@@ -16,7 +18,7 @@ export class RegistrationPage implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
@@ -26,8 +28,8 @@ export class RegistrationPage implements OnInit {
     console.log('creando user');
     console.log(this.form);
 
-    // Login the user
-
+    // Register the user
+    this.dataService.registerUser();
     // Reset the form
     //this.form.reset();
 

@@ -28,10 +28,10 @@ export class LoginPage implements OnInit {
     // Login the user
 
     // Reset the form
-    //this.form.reset();
+    this.form.reset();
 
     // Redirect to home
-    this.router.navigate(['/product']);
+    this.router.navigate(['/start']);
   }
 
 }
