@@ -10,6 +10,13 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./single-product.page.scss'],
 })
 export class SingleProductPage implements OnInit {
+
+  // Firebase test
+  id: string;
+  type: string;
+  title: string;
+  subTitle: string;
+
   idProduct: string;
   private products: Product[] = [];
 
@@ -22,8 +29,9 @@ export class SingleProductPage implements OnInit {
       console.log(params2);
 
       // Validate if exists
-
       this.idProduct = params2.get('idProduct');
+
+      
     });
 
     // Get product from Dataservice

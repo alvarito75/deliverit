@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="start"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ isEdit? 'Edit test': 'Add test' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>{{ isEdit? 'Edit test': 'Add test' }}</h3>
+
+    <ion-item lines="full">
+      <ion-label position="floating">ID  Producto</ion-label>
+      <ion-input type="text" required [(ngModel)]="idProduct" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre producto</ion-label>
+      <ion-input type="text" required [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Tipo</ion-label>
+
+      <ion-select [(ngModel)]="type">
+      <ion-select-option value="liviano">Liviano</ion-select-option>
+      <ion-select-option value="pesado">Pesado</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="number" required [(ngModel)]="quantity"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" (click)="addProduct()" expand="block">{{ isEdit? 'Edit': 'Add' }} &nbsp;<ion-spinner name="lines" *ngIf="loading"></ion-spinner></ion-button>
+      </ion-col>
+    </ion-row>
+
+</ion-content>

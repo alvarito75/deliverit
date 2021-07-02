@@ -29,7 +29,11 @@ const routes: Routes = [
       {
         path: ':idProduct',
         loadChildren: () => import('./product/single-product/single-product.module').then( m => m.SingleProductPageModule)
-      }
+      },
+      {
+        path: 'add-edit-product/:type',
+        loadChildren: () => import('./product/op-product/op-product.module').then(m => m.OpProductPageModule)
+      },
     ],
   },
   {

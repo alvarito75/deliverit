@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>Lista de productos</ion-title>
     <ion-buttons slot='primary'>
-      <ion-button (click)='crearProduct()'>
+      <ion-button (click)='crearOrder()'>
         <ion-icon name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,4 +14,51 @@
 
 <ion-content>
   <app-product-list></app-product-list>
+
+
+  <!--
+  <h1>Hiiii</h1>
+
+  <ion-button routerLink="add-edit-product/edit">
+    Edit
+  </ion-button>
+
+  <ion-button routerLink="add-edit-product/add">
+    Add
+  </ion-button>
+  -->
+
+  <ion-item-divider>
+    <ion-label>
+      <span class="already">Abajo es de Firebase</span>
+    </ion-label>
+  </ion-item-divider>
+
+  
+<ion-item *ngFor="let product of products">
+  
+  <ion-grid>
+    <ion-row routerLink="add-edit-product/{{product.id}}">
+      <ion-col size="4">
+        <div>
+          <ion-avatar>
+            <img src="{{product.imageUrl}}">
+          </ion-avatar>
+        </div>
+      </ion-col>
+
+      <ion-col size="8" class="product-details">
+        <div>
+          <ion-label>Nombre: {{product.name}}</ion-label>
+        </div>
+        <div>
+          <ion-label>Cantidad: {{product.quantity}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-item>
+
+
 </ion-content>

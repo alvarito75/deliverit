@@ -80,7 +80,8 @@ export class SingleOrderPagePage implements OnInit {
 
   // Leaflet is shown on Single Order page
   loadMap(){
-    this.map = new Map('mapId').setView([17.3850,78.4867], 13);
+    // Default Cochabamba: -17.390466562931994, -66.1693987310115
+    this.map = new Map('mapId').setView([-17.390466562931994, -66.1693987310115], 13);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     { attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})
     .addTo(this.map); // This line is added to add the Tile Layer to our map

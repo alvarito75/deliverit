@@ -14,11 +14,15 @@ import { Subject }  from 'rxjs';
 
 // Import HttpClient
 import { HttpClient } from '@angular/common/http';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  collectionName = 'test';
+  collectionNameProduct = 'products';
 
   // Product list
   private products: Product[] = [
@@ -38,7 +42,36 @@ export class DataService {
   private fooSubject = new Subject<string>();
   private ordersSubject = new Subject<any>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private firestore: AngularFirestore) { }
+
+  getTests() {
+    return this.firestore.collection(this.collectionName).snapshotChanges();
+  }
+
+  addTestToFirebase(data) {
+    return this.firestore.collection(this.collectionName).add(data);
+  }
+
+  // Get products from DB
+  getProducts() {
+    return this.firestore.collection(this.collectionNameProduct).snapshotChanges();
+  }
+
+  // Save a product to DB
+  addProductToFirebase(product) {
+    return this.firestore.collection(this.collectionNameProduct).add(product);
+  }
+
+  // Update a product in the DB
+  updateProductToFirebase(id, data) {
+    console.log(this.collectionNameProduct + '/' + id);
+    return this.firestore.doc(this.collectionNameProduct + '/' + id).update(data);
+  }
+
+  // Save a product to DB
+  getSingleProduct(id) {
+    return this.firestore.collection(this.collectionNameProduct).doc(id).valueChanges();
+  }
 
   // Get products data
   getProductsData() {
@@ -95,8 +128,6 @@ export class DataService {
 
     return newOrder;
 
-
-    // Add to an aux array.
   }
 
   // Register user
@@ -106,14 +137,9 @@ export class DataService {
     const newUser = new User('Alvaross', 'Mamani', 'test@test.com', '123456789');
 
     // TODO: Send the values to Realtime Firebase
-    //this.httpClient.post('https://claseapp-aba0b-default-rtdb.firebaseio.com/person.json', {...newPerson, idPeople:null}).subscribe();
-    // Firebase URL 'https://deliverit-f7233-default-rtdb.firebaseio.com/'
-
     //this.http.post('https://deliverit-f7233-default-rtdb.firebaseio.com/', {...newUser, idPeople:null}).subscribe();
     const users = this.http.post('https://deliverit-f7233-default-rtdb.firebaseio.com/users.json', {...newUser}).subscribe();
 
-    // Another test
-    //this.http.post<User>('https://deliverit-f7233-default-rtdb.firebaseio.com/users.json', newUser).subscribe();
 
     // Get users
     const usersFirebase = this.http.get('https://deliverit-f7233-default-rtdb.firebaseio.com/users.json').subscribe();

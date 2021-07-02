@@ -10,7 +10,25 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ProductPage implements OnInit {
 
-  constructor(private dataService: DataService, private router: Router, private alertController: AlertController) { }
+  products: any;
+
+  constructor(private dataService: DataService, private router: Router, private alertController: AlertController, public dataservice: DataService) { 
+
+    this.dataservice.getProducts().subscribe((res: any) => {
+      this.products = res.map(e => {
+        return {
+          id: e.payload.doc.id,
+          name: e.payload.doc.data()['name'],
+          type: e.payload.doc.data()['type'],
+          imageUrl: e.payload.doc.data()['imageUrl'],
+          quantity: e.payload.doc.data()['quantity'],
+        }
+      })
+      console.log(this.products);
+    }, (err: any) => {
+      console.log(err);
+    });
+  }
 
   ngOnInit() {
   }
@@ -33,19 +51,13 @@ export class ProductPage implements OnInit {
           text: 'Aceptar',
           handler: () => {
             console.log('Confirm Okay');
-            //this.removeAndBack();
+            this.router.navigate(['/product/add-edit-product/add']);
           }
         }
       ]
     });
 
     await alert.present();
-
-  }
-
-  crearProduct() {
-    console.log('test');
-    this.router.navigate(['/create-product']);
   }
 
 }
